@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
   const Preferences: React.FC = () => {
   const [notificationFrequency, setNotificationFrequency] = useState<string>('All');
@@ -15,8 +15,7 @@ import React, { useState, useRef, useEffect } from 'react';
       <h2>Notification Settings</h2>
       <select value={notificationFrequency} onChange={(e) => setNotificationFrequency(e.target.value)}>
         <option value="All">All</option>
-        <option value="Daily">Daily</option>
-        <option value="Weekly">Weekly</option>
+        <option value="Important">Only Important</option>
       </select>
 
       <div className="slider-container">

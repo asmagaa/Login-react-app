@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <Router>
       <nav>
         <Link to="/account-settings">Account Settings</Link>
-r        <Link to="/change-password">Change Password</Link>
+        <Link to="/change-password">Change Password</Link>
         <Link to="/preferences">Preferences</Link>
       </nav>
       <Routes>
