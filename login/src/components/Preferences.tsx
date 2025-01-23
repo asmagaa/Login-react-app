@@ -1,28 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-const Preferences: React.FC = () => {
+  const Preferences: React.FC = () => {
   const [notificationFrequency, setNotificationFrequency] = useState<string>('All');
-  const [collectData, setCollectData] = useState<boolean>(false);
+  const [collectData, setCollectData] = useState<boolean>();
+  const [frequencyValue, setFrequencyValue] = useState<number>();
 
   const handleSave = () => {
-    console.log({ notificationFrequency, collectData });
+    console.log({ notificationFrequency, collectData, frequencyValue });
   };
 
   return (
-    <div>
+
+    <div className="panel">
       <h2>Notification Settings</h2>
       <select value={notificationFrequency} onChange={(e) => setNotificationFrequency(e.target.value)}>
         <option value="All">All</option>
-        <option value="1">Cos tam #1</option>
-        <option value="2">Cos tam #2</option>
-        <option value="3">Cos tam #3</option>
+        <option value="Daily">Daily</option>
+        <option value="Weekly">Weekly</option>
       </select>
+
+      <div className="slider-container">
+        <label>Notification Frequency</label>
+        <input
+          type="range"
+          min="0"
+          max="100"
+          value={frequencyValue}
+          onChange={(e) => setFrequencyValue(Number(e.target.value))}
+        />
+        <span>{frequencyValue}%</span>
+      </div>
+
       <label>
         <input type="checkbox" checked={collectData} onChange={(e) => setCollectData(e.target.checked)} />
         Collect additional data
       </label>
+
       <button onClick={handleSave}>Save preferences</button>
     </div>
+
   );
 };
 

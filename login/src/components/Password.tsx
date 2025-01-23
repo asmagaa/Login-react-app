@@ -11,11 +11,17 @@ const ChangePassword: React.FC = () => {
 
   return (
     <div>
+
       <h2>Change Password</h2>
+
       <input type="password" placeholder="Current password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} />
+
       <input type="password" placeholder="New password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+
       <input type="password" placeholder="Confirm password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+
       <button onClick={handleChangePassword}>Change password</button>
+      
     </div>
   );
 };

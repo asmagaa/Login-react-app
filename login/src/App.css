@@ -70,18 +70,14 @@ input[type="radio"] {
 }
 
 button {
-  background: linear-gradient(135deg, #007bff, #0056b3);
-  color: white;
+  background-color: lightgreen; 
+  color: darkgreen;
   border: none;
   padding: 0.75rem 1.5rem;
   border-radius: 5px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-button:hover {
-  background: linear-gradient(135deg, #0056b3, #007bff);
+  transition: background-color 0.3s ease;
 }
 
 label {
@@ -99,4 +95,58 @@ label {
 .radio-group label {
   display: flex;
   align-items: center;
+}
+
+.slider-container {
+  margin-bottom: 1.5rem;
+}
+
+.slider-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  margin-bottom: 0.5rem;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider-container input[type="range"]::-webkit-slider-runnable-track {
+  background: #ddd;
+  height: 8px;
+  border-radius: 5px;
+  background: linear-gradient(90deg, rgb(255, 0, 242), rgb(0, 153, 255));
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border-radius: 50%;
+  margin-top: -6px;
+  border: 2px solid grey;
+  animation: pulse 1.5s infinite;
+}
+
+.slider-container input[type="range"]:focus {
+  outline: none;
+}
+
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-top: -6px;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  animation: pulse 1.5s infinite;
 }
