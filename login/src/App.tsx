@@ -1,8 +1,8 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Routes, NavLink } from 'react-router-dom' // Use NavLink
-import Preferences from './components/Preferences'
+import { BrowserRouter as Router, Route, NavLink, Routes } from 'react-router-dom'
 import ChangePassword from './components/Password'
 import AccountSettings from './components/Account'
+import Preferences from './components/Preferences'
 import './App.css'
 
 const App: React.FC = () => {
@@ -10,13 +10,13 @@ const App: React.FC = () => {
 		<Router>
 			<div className='panel-container'>
 				<nav>
-					<NavLink to='/account-settings' className={({ isActive }) => (isActive ? 'active' : '')}>
+					<NavLink to='/account-settings' activeClassName='active'>
 						Account Settings
 					</NavLink>
-					<NavLink to='/change-password' className={({ isActive }) => (isActive ? 'active' : '')}>
+					<NavLink to='/change-password' activeClassName='active'>
 						Change Password
 					</NavLink>
-					<NavLink to='/preferences' className={({ isActive }) => (isActive ? 'active' : '')}>
+					<NavLink to='/preferences' activeClassName='active'>
 						Preferences
 					</NavLink>
 				</nav>
